@@ -10,11 +10,11 @@
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <p>{{$property_id}}</p>
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+
                 </div>
             </div>
         </div>

@@ -24,7 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $person = Auth::user();
+        $property_id = $person->property_id;
+
+        return view('home', compact('property_id'));
         // $person = Auth::user();
         // if($person->type == "teacher"){
         //     return redirect()->route('teacher-dashboard');

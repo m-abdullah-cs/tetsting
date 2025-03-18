@@ -64,13 +64,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        dd("hi");
+        // dd($data['type']);
+       
         if($data['type'] == 'teacher'){
             $id = IdGenerator::generate(['table' => 'users', 'field' => 'property_id', 'length' => '6', 'prefix' => 'PR01']);
         }elseif($data['type'] == 'student'){
             $id = IdGenerator::generate(['table' => 'users', 'field' => 'property_id', 'length' => '6', 'prefix' => 'ST01']);
         }
-        
         return User::create([
             'property_id' => $id,
             'name' => $data['name'],
